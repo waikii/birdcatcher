@@ -5,6 +5,7 @@ argparse==1.2.1
 colorama==0.2.5
 configobj==4.7.2
 decorator==3.4.0
+gunicorn==0.13.4
 html5lib==0.999
 httplib2==0.8
 ipython==1.2.1
