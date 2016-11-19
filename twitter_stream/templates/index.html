@@ -1,0 +1,36 @@
+<html>
+    <head> 
+    
+    </head>
+    <body>
+        
+        {% load twitter_stream_extras %}
+        {% for i in range %}
+            <div> 
+                <img src="{{tweet_profile|index:i}}" style="width:50px; height: 50px;"> </img>
+                
+                {# If twitterretweet is not empty then make the a tag #}
+                
+                {% if twitterretweet|index:i != "" %}
+                
+                <a href= "{{twitterretweet|index:i}}"> please click me </a>
+                
+                {% endif %}
+                
+                <br> {{tweet|index:i}}<br> 
+                
+                {# If twitter_image tweet is not empty then make the image tag #}
+                
+                {% if tweet_image|index:i != "" %}
+                
+                <img src="{{tweet_image|index:i}}" style="width:200px; height: 200px;"> </img> 
+                
+                {% endif %}
+            </div> 
+        {% endfor %}
+
+        <div style = "float: left"> </div>
+    </body> 
+
+         
+</html>
