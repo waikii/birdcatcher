@@ -19,7 +19,7 @@ from django.contrib import admin
 import twitter_stream.views
 
 urlpatterns = [
-    url(r'^$', twitter_stream.views.index, name='index')
+    url(r'^$', twitter_stream.views.index, name='index'),
     #url(r'^stream', include('twitter_stream.urls')),
     url(r'^admin/', admin.site.urls),
 ]
