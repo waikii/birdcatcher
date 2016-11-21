@@ -18,7 +18,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^stream', include('twitter_stream.urls')),
+    url(r'^', include('twitter_stream.urls')),
+    #url(r'^stream', include('twitter_stream.urls')),
     url(r'^admin/', admin.site.urls),
 ]
 
