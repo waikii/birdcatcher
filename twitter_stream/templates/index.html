@@ -1,13 +1,22 @@
+{% load staticfiles %}
 <html>
     <head> 
-    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
     </head>
     <body>
         
+        <div class="page-header">
+        <h1>Birdcatcher</h1>
+        </div>
+        
+        <div class="container-fluid">
+        
         {% load twitter_stream_extras %}
         {% for i in range %}
-            <div> 
-                <img src="{{tweet_profile|index:i}}" style="width:50px; height: 50px;"> </img>
+            <div class="col-md-3 well "> 
+                <img src="{{tweet_profile|index:i}}" class="img-rounded"> </img>
                 
                 {# If twitterretweet is not empty then make the a tag #}
                 
@@ -23,13 +32,14 @@
                 
                 {% if tweet_image|index:i != "" %}
                 
-                <img src="{{tweet_image|index:i}}" style="width:200px; height: 200px;"> </img> 
+                <img src="{{tweet_image|index:i}}" class="img-responsive"> </img> 
                 
                 {% endif %}
             </div> 
         {% endfor %}
-
-        <div style = "float: left"> </div>
+        
+        </div>
+        
     </body> 
 
          
