@@ -11,7 +11,7 @@ import json
 from . import models as m
 
 def index(request):
-    '''try:
+    try:
         import json
     except ImportError:
         import simplejson as            json
@@ -38,6 +38,4 @@ def index(request):
     template = loader.get_template('index.html')
     context = Context({"tweet": tweet_text,  "tweet_profile":tweet_profile_picture,"twitterretweet":tweet_expand_url,"tweet_image": tweet_image, "range": range(len(tweet_text))})
     
-    return HttpResponse(template.render(context))'''
-
-    return HttpResponse('Hello from Python!')
+    return HttpResponse(template.render(context))
