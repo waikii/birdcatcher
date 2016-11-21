@@ -1,1 +1,1 @@
-web: python manage.py runserver $IP:8000
+web: python manage.py runserver
