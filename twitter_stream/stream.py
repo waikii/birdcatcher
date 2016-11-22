@@ -16,8 +16,8 @@ oauth = OAuth(ACCESS_TOKEN, ACCESS_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 
 
 twitter = Twitter(auth=oauth)
-recent_posts = twitter.search.tweets(q='from:@hm_morgan', result_type='recent', lang='en', count=10)
-recent_posts2 = twitter.search.tweets(q='from:@hsru_aberdeen', result_type='recent', lang='en', count=10)
+recent_posts = twitter.search.tweets(q='from:@hm_morgan', result_type='recent', lang='en', count=5)
+recent_posts2 = twitter.search.tweets(q='from:@hsru_aberdeen', result_type='recent', lang='en', count=5)
 
 for n in range(len(recent_posts2['statuses'])):
     recent_posts['statuses'].append(recent_posts2['statuses'][n]) # trying to appendto 1 file
