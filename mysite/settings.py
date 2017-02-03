@@ -47,7 +47,7 @@ TEMPLATE_LOADERS = (
 SECRET_KEY = 'qbe6)nf-ex65n@+!iww562x9uu*3^&5o@krry8xmz$#3nkb%!l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
