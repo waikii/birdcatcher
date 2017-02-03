@@ -20,10 +20,14 @@ class tweet(models.Model):
     #'%Y-%m-%d %H:%M:%S',     # '2006-10-25 14:30:59' is the syntax of datetimefield, but twitter returns
     #               "created_at":"Wed Aug 27 13:08:45 +0000 2008"
     
-    
-    def __unicode__(self):
-        return self.tweet_text
-    
+    try:
+        
+        def __unicode__(self):
+            
+            return self.tweet_text
+    except ValueError:
+        pass
+
 class account(models.Model):
     
     account_id = models.IntegerField(primary_key=True)
@@ -35,14 +39,20 @@ class account(models.Model):
     #account_group = models.CharField(max_length=100)
     #to be implemented later
     
-    def __unicode__(self):
-        return self.account_Name
+    try:
+        def __unicode__(self):
+            return self.account_Name
+    except ValueError:
+        pass
     
 class hashtag(models.Model):
     
     hashtag_hash = models.CharField(primary_key=True, max_length=100)
     
-    def __unicode__(self):
-        return self.hashtag_hash
+    try:
+        def __unicode__(self):
+            return self.hashtag_hash
+    except ValueError:
+        pass
     
     
