@@ -1,14 +1,15 @@
 {% load staticfiles %}
 <html>
     <head>
-    {# load bootstrap 3 stylesheets and index.css#}     
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        {# load bootstrap 3 stylesheets and index.css#}     
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{{ staticfiles }}mysite/css/index.css" />
     </head>
     <body>
         
         <div class="page-header">
+        <img src="/birdcatcher.png" alt="Smiley face" height="42" width="42"> 
         <h1>Birdcatcher</h1>
         </div>
         
@@ -16,30 +17,34 @@
         
         {% load twitter_stream_extras %}
         {# loads custom filter to easily iterate over each element using list|index:n #}
-        {% for i in range %}
-            <div class="col-md-3 well"> 
-                <img src="{{tweet_profile|index:i}}" class="img-rounded"> </img>
-                
-                {# If twitterretweet is not empty then make the a tag #}
-                
-                {% if twitterretweet|index:i != "" %}
-                
-                <a href= "{{twitterretweet|index:i}}"> please click me </a>
-                
+        {% for n in four %}
+            <div class="col-md-3">
+            {% for i in range %}
+                {% if i|remain:4 == n %}
+                <div class="well"> 
+                    <img src="{{tweet_profile|index:i}}" class="img-rounded"> </img>
+                    
+                    {# If twitterretweet is not empty then make the a tag #}
+                    
+                    {% if twitterretweet|index:i != "" %}
+                    
+                    <a href= "{{twitterretweet|index:i}}"> please click me </a>
+                    
+                    {% endif %}
+                    
+                    <br> {{tweet|index:i}}<br> 
+                    
+                    {# If twitter_image tweet is not empty then make the image tag #}
+                    
+                    {% if tweet_image|index:i != "" %}
+                    
+                    <img src="{{tweet_image|index:i}}" class="img-responsive"> </img> 
+                    
+                    {% endif %}
+                </div> 
                 {% endif %}
-                
-                <br> {{tweet|index:i}}<br> 
-                
-                {# If twitter_image tweet is not empty then make the image tag #}
-                
-                {% if tweet_image|index:i != "" %}
-                
-                <img src="{{tweet_image|index:i}}" class="img-responsive"> </img> 
-                
-                {% endif %}
-            </div> 
+            {% endfor %}</div>
         {% endfor %}
-        
         </div>
         
     </body> 

@@ -7,3 +7,8 @@ register = template.Library()
 
 def index(List, i):
     return List[int(i)]
+    
+@register.filter
+def remain(value, arg):
+    x = value % arg
+    return x

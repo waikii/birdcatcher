@@ -2,12 +2,12 @@
     background-color: #0084b4;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
-    color: #FFF;
+    color: #fff;
 }
-
 
 .col-md-3{
     font-size: large;
+    float: left;
 }
 
 
